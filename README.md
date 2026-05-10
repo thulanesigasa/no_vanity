@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# No Vanity Investments Consultancy
+
+A premium, high-performance web application for No Vanity Investments Consultancy, specializing in business registration and corporate compliance in Zimbabwe.
+
+## Tech Stack
+- **Backend**: Python Flask
+- **Database**: PostgreSQL (Supabase) / SQLite (Local)
+- **Frontend**: Vanilla HTML/JS, Tailwind CSS, Swiper.js, Lenis
+- **Deployment**: Vercel
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+- Python 3.11+
+- Git
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/thulanesigasa/no_vanity.git
+   cd no_vanity
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Create a virtual environment:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Set up environment variables (.env):
+   Create a `.env` file in the root directory:
+   ```env
+   SECRET_KEY=your_secret_key_here
+   DATABASE_URL=postgresql://postgres:[password]@db.[project-id].supabase.co:5432/postgres
+   ```
 
-## Learn More
+5. Run the application:
+   ```bash
+   python run.py
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+## Production Deployment (Vercel)
+The project is pre-configured for Vercel deployment via `vercel.json`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Connect your GitHub repository to Vercel.
+2. Add your `DATABASE_URL` and `SECRET_KEY` to the Environment Variables in the Vercel dashboard.
+3. Deploy.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## SEO & Accessibility
+- Pre-configured `robots.txt` and `sitemap.xml`.
+- Optimized metadata for Zimbabwean corporate search intent.
+- Smooth scrolling and staggered animations for enhanced UX.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+&copy; 2026 No Vanity Investments Consultancy.

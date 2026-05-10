@@ -44,3 +44,11 @@ def admin():
     # In production, add @login_required
     leads = ServiceRequest.query.order_by(ServiceRequest.created_at.desc()).all()
     return render_template('admin.html', leads=leads)
+
+@main_bp.route('/robots.txt')
+def robots():
+    return main_bp.send_static_file('robots.txt')
+
+@main_bp.route('/sitemap.xml')
+def sitemap():
+    return main_bp.send_static_file('sitemap.xml')
