@@ -149,18 +149,33 @@ document.addEventListener('DOMContentLoaded', () => {
         paymentMessage.classList.add('hidden');
         paymentMessage.className = 'mt-4 p-4 rounded-md text-center font-medium border'; // Reset classes
         
-        // Mock Backend Delay
-        await new Promise(resolve => setTimeout(resolve, 2000));
-        
-        // Mock Success Response
-        const success = true; 
-        
-        if (success) {
-            paymentMessage.innerHTML = `Success! Redirecting to secure gateway...<br><span class="text-xs text-gray-500 mt-2 block">Ref: NV-${Date.now()}</span>`;
-            paymentMessage.classList.add('border-emerald-DEFAULT/30', 'bg-emerald-DEFAULT/10', 'text-emerald-DEFAULT', 'block');
-            paymentMessage.classList.remove('hidden');
-        } else {
-            paymentMessage.textContent = 'An error occurred. Please try again.';
+        // Call Real Backend API
+        try {
+            const response = await fetch('/api/payment', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    service: document.getElementById('service-select').value,
+                    fullName: document.getElementById('full-name').value,
+                    phone: document.getElementById('phone').value,
+                    email: document.getElementById('email').value
+                })
+            });
+            
+            const result = await response.get_json ? await response.get_json() : await response.json();
+            
+            if (response.ok) {
+                paymentMessage.innerHTML = `Success! Redirecting to secure gateway...<br><span class="text-xs text-gray-500 mt-2 block">Ref: ${result.reference}</span>`;
+                paymentMessage.classList.add('border-emerald-DEFAULT/30', 'bg-emerald-DEFAULT/10', 'text-emerald-DEFAULT', 'block');
+                paymentMessage.classList.remove('hidden');
+                
+                // Optional: redirect to result.paymentUrl
+                // setTimeout(() => window.location.href = result.paymentUrl, 2000);
+            } else {
+                throw new Error(result.error || 'Server error');
+            }
+        } catch (error) {
+            paymentMessage.textContent = error.message;
             paymentMessage.classList.add('border-red-500/30', 'bg-red-500/10', 'text-red-400', 'block');
             paymentMessage.classList.remove('hidden');
         }
