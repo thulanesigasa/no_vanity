@@ -184,4 +184,99 @@ document.addEventListener('DOMContentLoaded', () => {
         submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
         submitBtn.innerHTML = 'Proceed to Encrypted Payment';
     });
-});
+
+    // --- Liveness: Text Scramble Effect ---
+    class TextScramble {
+        constructor(el) {
+            this.el = el;
+            this.chars = '!<>-_\\/[]{}—=+*^?#________';
+            this.update = this.update.bind(this);
+        }
+        setText(newText) {
+            const oldText = this.el.innerText;
+            const length = Math.max(oldText.length, newText.length);
+            const promise = new Promise((resolve) => this.resolve = resolve);
+            this.queue = [];
+            for (let i = 0; i < length; i++) {
+                const from = oldText[i] || '';
+                const to = newText[i] || '';
+                const start = Math.floor(Math.random() * 40);
+                const end = start + Math.floor(Math.random() * 40);
+                this.queue.push({ from, to, start, end });
+            }
+            cancelAnimationFrame(this.frameRequest);
+            this.frame = 0;
+            this.update();
+            return promise;
+        }
+        update() {
+            let output = '';
+            let complete = 0;
+            for (let i = 0, n = this.queue.length; i < n; i++) {
+                let { from, to, start, end, char } = this.queue[i];
+                if (this.frame >= end) {
+                    complete++;
+                    output += to;
+                } else if (this.frame >= start) {
+                    if (!char || Math.random() < 0.28) {
+                        char = this.randomChar();
+                        this.queue[i].char = char;
+                    }
+                    output += `<span class="opacity-50 text-gold-DEFAULT">${char}</span>`;
+                } else {
+                    output += from;
+                }
+            }
+            this.el.innerHTML = output;
+            if (complete === this.queue.length) {
+                this.resolve();
+            } else {
+                this.frameRequest = requestAnimationFrame(this.update);
+                this.frame++;
+            }
+        }
+        randomChar() {
+            return this.chars[Math.floor(Math.random() * this.chars.length)];
+        }
+    }
+
+    const heroSub = document.querySelector('#hero p');
+    if (heroSub) {
+        const scrambler = new TextScramble(heroSub);
+        setTimeout(() => scrambler.setText('We simplify company registration, ZIMRA tax clearances, and PRAZ tender compliance so you can operate with absolute legal confidence.'), 1500);
+    }
+
+    // --- Stat Count Up Animation ---
+    const stats = document.querySelectorAll('.stat-reveal');
+    const animateStats = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const target = entry.target;
+                const endValue = target.innerText;
+                if (endValue.includes('%') || endValue.includes('h')) {
+                    let count = 0;
+                    const suffix = endValue.replace(/[0-9]/g, '');
+                    const finalNum = parseInt(endValue);
+                    const duration = 2000;
+                    const startTime = performance.now();
+
+                    const updateCount = (now) => {
+                        const progress = Math.min((now - startTime) / duration, 1);
+                        const current = Math.floor(progress * finalNum);
+                        target.innerText = current + suffix;
+                        if (progress < 1) requestAnimationFrame(updateCount);
+                    };
+                    requestAnimationFrame(updateCount);
+                }
+                observer.unobserve(target);
+            }
+        });
+    };
+    const statsObserver = new IntersectionObserver(animateStats, { threshold: 0.5 });
+    stats.forEach(stat => statsObserver.observe(stat));
+
+    // --- Mesh Gradient background on hero ---
+    const hero = document.getElementById('hero');
+    if (hero) hero.classList.add('mesh-gradient');
+} ) ;  
+ 

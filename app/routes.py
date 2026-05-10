@@ -38,3 +38,9 @@ def payment():
         'paymentUrl': 'https://secure.paynow.co.zw/mock/checkout/' + reference,
         'reference': reference
     }), 200
+
+@main_bp.route('/admin-leads-1234')
+def admin():
+    # In production, add @login_required
+    leads = ServiceRequest.query.order_by(ServiceRequest.created_at.desc()).all()
+    return render_template('admin.html', leads=leads)

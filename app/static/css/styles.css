@@ -7,6 +7,19 @@ body {
     cursor: none; /* Hide default cursor for custom cursor */
 }
 
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("https://grainy-gradients.vercel.app/noise.svg");
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 9999;
+}
+
 a, button, select, input, .cursor-pointer {
     cursor: none !important;
 }
@@ -163,7 +176,25 @@ input:-webkit-autofill:active{
     -webkit-text-fill-color: white !important;
 }
 
-/* UI/UX Pro Max: Smooth Hover Transitions */
-.transition-all {
-    transition-duration: 400ms;
+/* Mesh Gradient Animation */
+.mesh-gradient {
+    background: radial-gradient(at 0% 0%, rgba(212, 175, 55, 0.05) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(80, 200, 120, 0.05) 0px, transparent 50%);
+    animation: meshMove 20s ease infinite alternate;
+}
+
+@keyframes meshMove {
+    0% { transform: scale(1) translate(0, 0); }
+    100% { transform: scale(1.1) translate(-2%, -2%); }
+}
+
+/* Scramble effect hint */
+.scramble-text {
+    display: inline-block;
+    min-height: 1.2em;
+}
+
+/* Admin Styles */
+.admin-row:hover {
+    background-color: rgba(212, 175, 55, 0.05);
 }
