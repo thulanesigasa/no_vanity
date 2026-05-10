@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const mtClass = index % 2 !== 0 ? 'lg:mt-12' : '';
             
             const div = document.createElement('div');
-            div.className = `bg-navy-900/50 backdrop-blur-sm p-10 rounded-none border-l-2 border-transparent hover:border-gold-DEFAULT transition-all shadow-lg group cursor-pointer ${mtClass} reveal active`;
+            div.className = `bg-navy-900/50 backdrop-blur-sm p-10 rounded-none border-l-2 border-transparent hover:border-gold-DEFAULT transition-all shadow-lg group cursor-pointer ${mtClass} reveal`;
             div.innerHTML = `
                 <div class="text-gold-DEFAULT/20 text-5xl font-heading mb-4 group-hover:text-gold-DEFAULT/40 transition-colors">0${index + 1}</div>
                 <h3 class="text-2xl font-heading font-bold mb-4 text-white group-hover:text-gold-light transition-colors">${service.name}</h3>
@@ -90,6 +90,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (visibleCount < services.length) {
             servicesGrid.appendChild(seeMoreContainer);
         }
+        
+        // Refresh reveal elements and trigger animation
+        updateReveals();
+        revealOnScroll();
     };
 
     renderServices();
@@ -131,7 +135,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- Reveal Animations on Scroll ---
-    const reveals = document.querySelectorAll('.reveal');
+    let reveals = document.querySelectorAll('.reveal');
+
+    const updateReveals = () => {
+        reveals = document.querySelectorAll('.reveal');
+    };
 
     const revealOnScroll = () => {
         const windowHeight = window.innerHeight;
@@ -144,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (!reveal.classList.contains('active')) {
                     setTimeout(() => {
                         reveal.classList.add('active');
-                    }, index % 3 * 100);
+                    }, (index % 3) * 100);
                 }
             }
         });
