@@ -1,23 +1,32 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- Lenis Smooth Scroll ---
-    const lenis = new Lenis({
-        duration: 1.2,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        smoothWheel: true
-    });
-
-    function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-
     // --- Preloader Logic ---
     const preloader = document.getElementById('preloader');
-    setTimeout(() => {
-        preloader.classList.add('fade-out');
-        setTimeout(() => preloader.remove(), 800);
-    }, 1000); // Reduced to 1 second for better UX
+    if (preloader) {
+        setTimeout(() => {
+            preloader.classList.add('fade-out');
+            setTimeout(() => preloader.remove(), 800);
+        }, 1000);
+    }
+
+    // --- Lenis Smooth Scroll ---
+    let lenis;
+    try {
+        if (typeof Lenis !== 'undefined') {
+            lenis = new Lenis({
+                duration: 1.2,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                smoothWheel: true
+            });
+
+            function raf(time) {
+                lenis.raf(time);
+                requestAnimationFrame(raf);
+            }
+            requestAnimationFrame(raf);
+        }
+    } catch (e) {
+        console.error('Lenis failed to initialize:', e);
+    }
 
     // --- Custom Cursor Logic ---
     const cursor = document.getElementById('custom-cursor');
@@ -96,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
         revealOnScroll();
     };
 
-    renderServices();
+    // Initial call moved to the end to ensure all functions are defined
 
     seeMoreBtn.addEventListener('click', () => {
         visibleCount = services.length;
@@ -327,4 +336,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Mesh Gradient background on hero ---
     const hero = document.getElementById('hero');
     if (hero) hero.classList.add('mesh-gradient');
+
+    // --- Initialize Data ---
+    renderServices();
 });
