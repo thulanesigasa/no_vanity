@@ -1,0 +1,169 @@
+/* Custom Animations and Global Styles */
+
+/* Base font adjustments */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    cursor: none; /* Hide default cursor for custom cursor */
+}
+
+a, button, select, input, .cursor-pointer {
+    cursor: none !important;
+}
+
+/* --- Preloader --- */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #0A1128;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.preloader.fade-out {
+    transform: translateY(-100%);
+}
+
+.preloader-text {
+    font-family: 'EB Garamond', serif;
+    font-size: 2rem;
+    color: #D4AF37;
+    opacity: 0;
+    animation: pulseText 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulseText {
+    0% { opacity: 0.3; transform: scale(0.98); }
+    100% { opacity: 1; transform: scale(1.02); }
+}
+
+/* --- Custom Cursor --- */
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #D4AF37;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10000;
+    transition: transform 0.15s ease-out, width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-cursor.hover {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(212, 175, 55, 0.1);
+    backdrop-filter: blur(2px);
+}
+
+.custom-cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 4px;
+    background-color: #50C878;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10001;
+    transform: translate(-50%, -50%);
+}
+
+/* --- Persistent Frame --- */
+.page-frame {
+    position: fixed;
+    top: 1.5rem;
+    left: 1.5rem;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    pointer-events: none;
+    z-index: 40;
+}
+
+/* --- Scroll reveal classes --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+
+/* Rotating SVG Text */
+.rotate-text {
+    animation: spin 15s linear infinite;
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+/* UI/UX Pro Max: Trust & Authority Animations */
+@keyframes metricPulse {
+    0% { transform: scale(1); filter: drop-shadow(0 0 0 rgba(212, 175, 55, 0)); }
+    50% { transform: scale(1.05); filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5)); }
+    100% { transform: scale(1); filter: drop-shadow(0 0 0 rgba(212, 175, 55, 0)); }
+}
+
+.metric-pulse {
+    animation: metricPulse 3s infinite;
+}
+
+.stat-reveal {
+    opacity: 0.8;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.p-8:hover .stat-reveal {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+/* Custom scrollbar to match aesthetic */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #0A1128; 
+}
+::-webkit-scrollbar-thumb {
+    background: #334155; 
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #D4AF37; 
+}
+
+/* Form inputs autocomplete style fixing for dark mode */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px #0F1A3A inset !important;
+    -webkit-text-fill-color: white !important;
+}
+
+/* UI/UX Pro Max: Smooth Hover Transitions */
+.transition-all {
+    transition-duration: 400ms;
+}

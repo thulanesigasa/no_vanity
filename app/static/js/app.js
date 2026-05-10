@@ -1,0 +1,172 @@
+document.addEventListener('DOMContentLoaded', () => {
+    // --- Preloader Logic ---
+    const preloader = document.getElementById('preloader');
+    setTimeout(() => {
+        preloader.classList.add('fade-out');
+        setTimeout(() => preloader.remove(), 800);
+    }, 2000); // 2 second initial splash screen
+
+    // --- Custom Cursor Logic ---
+    const cursor = document.getElementById('custom-cursor');
+    const cursorDot = document.getElementById('custom-cursor-dot');
+    
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+        
+        cursorDot.style.left = e.clientX + 'px';
+        cursorDot.style.top = e.clientY + 'px';
+    });
+
+    const hoverElements = document.querySelectorAll('a, button, input, select, .cursor-pointer');
+    hoverElements.forEach(el => {
+        el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+        el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+    });
+
+    // --- Services Data ---
+    const services = [
+        { id: 'company_reg', name: 'Company Registration' },
+        { id: 'zimra_tax', name: 'ZIMRA Tax Clearance (ITF263)' },
+        { id: 'praz_tender', name: 'PRAZ Tender Registration' },
+        { id: 'shop_license', name: 'Shop Licensing Harare' },
+        { id: 'bookkeeping', name: 'Professional Bookkeeping' },
+        { id: 'trade_marks', name: 'Trademarks & IP' }
+    ];
+
+    // --- Populate Services Grid (Editorial / Asymmetric style) ---
+    const servicesGrid = document.getElementById('services-grid');
+    const serviceSelect = document.getElementById('service-select');
+    
+    // Create a container for the 'See More' button
+    const seeMoreContainer = document.createElement('div');
+    seeMoreContainer.className = 'col-span-1 md:col-span-2 lg:col-span-3 flex justify-center mt-8';
+    const seeMoreBtn = document.createElement('button');
+    seeMoreBtn.className = 'border border-gold-DEFAULT text-gold-DEFAULT px-8 py-3 rounded-md font-bold hover:bg-gold-DEFAULT/10 transition-colors duration-200 cursor-pointer';
+    seeMoreBtn.textContent = 'View All Services';
+    seeMoreContainer.appendChild(seeMoreBtn);
+
+    let visibleCount = 3;
+
+    const renderServices = () => {
+        servicesGrid.innerHTML = '';
+        
+        services.slice(0, visibleCount).forEach((service, index) => {
+            const mtClass = index % 2 !== 0 ? 'lg:mt-12' : '';
+            
+            const div = document.createElement('div');
+            div.className = `bg-navy-900/50 backdrop-blur-sm p-10 rounded-none border-l-2 border-transparent hover:border-gold-DEFAULT transition-all shadow-lg group cursor-pointer ${mtClass} reveal active`;
+            div.innerHTML = `
+                <div class="text-gold-DEFAULT/20 text-5xl font-heading mb-4 group-hover:text-gold-DEFAULT/40 transition-colors">0${index + 1}</div>
+                <h3 class="text-2xl font-heading font-bold mb-4 text-white group-hover:text-gold-light transition-colors">${service.name}</h3>
+                <p class="text-gray-400 mb-8 font-light leading-relaxed">Expert administration and legal filing to ensure complete compliance.</p>
+                <div class="flex justify-between items-center border-t border-white/5 pt-6 text-gold-DEFAULT">
+                    <span class="text-sm font-bold uppercase tracking-wider group-hover:text-gold-light transition-colors">Request Info</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform group-hover:translate-x-2 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </div>
+            `;
+            
+            div.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+            div.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+            
+            servicesGrid.appendChild(div);
+        });
+
+        if (visibleCount < services.length) {
+            servicesGrid.appendChild(seeMoreContainer);
+        }
+    };
+
+    renderServices();
+
+    seeMoreBtn.addEventListener('click', () => {
+        visibleCount = services.length;
+        renderServices();
+    });
+
+    // Populate Select Dropdown
+    services.forEach(service => {
+        const option = document.createElement('option');
+        option.value = service.id;
+        option.textContent = service.name;
+        serviceSelect.appendChild(option);
+    });
+
+    // --- Reveal Animations on Scroll ---
+    const reveals = document.querySelectorAll('.reveal');
+
+    const revealOnScroll = () => {
+        const windowHeight = window.innerHeight;
+        const elementVisible = 50; // trigger earlier
+
+        reveals.forEach(reveal => {
+            const elementTop = reveal.getBoundingClientRect().top;
+            if (elementTop < windowHeight - elementVisible) {
+                reveal.classList.add('active');
+            }
+        });
+    };
+
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll(); // Trigger once on load
+
+    // --- Smooth Scroll Active Link Highlighting ---
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('text-gold-DEFAULT');
+            if (link.getAttribute('href').includes(current)) {
+                link.classList.add('text-gold-DEFAULT');
+            }
+        });
+    });
+
+    // --- Handle Form Submission ---
+    const checkoutForm = document.getElementById('checkout-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const paymentMessage = document.getElementById('payment-message');
+
+    checkoutForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        submitBtn.disabled = true;
+        submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
+        submitBtn.innerHTML = 'Processing Securely...';
+        
+        paymentMessage.classList.add('hidden');
+        paymentMessage.className = 'mt-4 p-4 rounded-md text-center font-medium border'; // Reset classes
+        
+        // Mock Backend Delay
+        await new Promise(resolve => setTimeout(resolve, 2000));
+        
+        // Mock Success Response
+        const success = true; 
+        
+        if (success) {
+            paymentMessage.innerHTML = `Success! Redirecting to secure gateway...<br><span class="text-xs text-gray-500 mt-2 block">Ref: NV-${Date.now()}</span>`;
+            paymentMessage.classList.add('border-emerald-DEFAULT/30', 'bg-emerald-DEFAULT/10', 'text-emerald-DEFAULT', 'block');
+            paymentMessage.classList.remove('hidden');
+        } else {
+            paymentMessage.textContent = 'An error occurred. Please try again.';
+            paymentMessage.classList.add('border-red-500/30', 'bg-red-500/10', 'text-red-400', 'block');
+            paymentMessage.classList.remove('hidden');
+        }
+        
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+        submitBtn.innerHTML = 'Proceed to Encrypted Payment';
+    });
+});
