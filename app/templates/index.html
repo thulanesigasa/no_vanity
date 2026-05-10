@@ -47,6 +47,12 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
 </head>
 <body style="background-color: #0A1128;" class="text-white font-sans antialiased">
 
@@ -179,6 +185,63 @@
             </div>
         </div>
     </section>
+    
+    <!-- Testimonials Section (Smooth Slidings) -->
+    <section id="testimonials" class="py-24 px-6 md:px-12 bg-navy-800 border-y border-white/5 reveal overflow-hidden">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-white">Client <span class="text-gold-DEFAULT">Success</span> Stories</h2>
+                <p class="text-gray-400 font-light">Join 500+ businesses operating with absolute legal confidence.</p>
+            </div>
+            
+            <!-- Swiper -->
+            <div class="swiper testimonial-swiper pb-12">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide">
+                        <div class="p-10 bg-navy-900 border border-white/5 rounded-2xl h-full flex flex-col justify-between">
+                            <p class="text-lg italic text-gray-300 mb-8 font-light">"No Vanity handled our company registration and ZIMRA setup in record time. Their authority in the Zimbabwean market is unmatched."</p>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-full bg-gold-DEFAULT flex items-center justify-center font-bold text-navy-900">TN</div>
+                                <div class="text-left">
+                                    <h4 class="text-white font-bold">Tadiwa Nyoni</h4>
+                                    <p class="text-xs text-gold-DEFAULT uppercase tracking-widest">CEO, TechZim Solutions</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide">
+                        <div class="p-10 bg-navy-900 border border-white/5 rounded-2xl h-full flex flex-col justify-between">
+                            <p class="text-lg italic text-gray-300 mb-8 font-light">"Absolute professionals. The ITF263 clearance process was seamless. They are now our permanent corporate consultants."</p>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-full bg-emerald-DEFAULT flex items-center justify-center font-bold text-navy-900">SM</div>
+                                <div class="text-left">
+                                    <h4 class="text-white font-bold">Sarah Moyo</h4>
+                                    <p class="text-xs text-gold-DEFAULT uppercase tracking-widest">Director, Moyo Logistics</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide">
+                        <div class="p-10 bg-navy-900 border border-white/5 rounded-2xl h-full flex flex-col justify-between">
+                            <p class="text-lg italic text-gray-300 mb-8 font-light">"Navigating PRAZ tenders was a nightmare until we found No Vanity. Their guidance secured us a major government contract."</p>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-full bg-gold-DEFAULT flex items-center justify-center font-bold text-navy-900">KM</div>
+                                <div class="text-left">
+                                    <h4 class="text-white font-bold">Kelvin Mutasa</h4>
+                                    <p class="text-xs text-gold-DEFAULT uppercase tracking-widest">Founder, KM Construction</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
 
     <!-- Checkout / Contact Section -->
     <section id="checkout" class="py-24 px-6 md:px-12 bg-navy-800 border-t border-white/5 reveal">
@@ -248,6 +311,9 @@
         <p class="mt-2">Registered in Harare, Zimbabwe</p>
     </footer>
 
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
     <!-- Custom JS -->
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 </body>

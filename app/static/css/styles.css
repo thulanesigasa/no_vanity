@@ -167,6 +167,23 @@ a, button, select, input, .cursor-pointer {
     background: #D4AF37; 
 }
 
+/* Swiper Customization */
+.swiper-pagination-bullet {
+    background: rgba(212, 175, 55, 0.2) !important;
+    opacity: 1 !important;
+}
+
+.swiper-pagination-bullet-active {
+    background: #D4AF37 !important;
+    width: 24px !important;
+    border-radius: 4px !important;
+    transition: width 0.3s ease !important;
+}
+
+.swiper-slide {
+    height: auto !important; /* Ensure all slides in a row match height */
+}
+
 /* Form inputs autocomplete style fixing for dark mode */
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 

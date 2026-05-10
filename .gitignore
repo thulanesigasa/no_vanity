@@ -23,3 +23,8 @@ dist/
 .agent/
 .vscode/
 .idea/
+
+# Database
+instance/
+*.sqlite3
+*.db

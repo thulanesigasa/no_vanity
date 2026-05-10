@@ -1,4 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // --- Lenis Smooth Scroll ---
+    const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smoothWheel: true
+    });
+
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
     // --- Preloader Logic ---
     const preloader = document.getElementById('preloader');
     setTimeout(() => {
@@ -86,6 +99,29 @@ document.addEventListener('DOMContentLoaded', () => {
         renderServices();
     });
 
+    // --- Swiper Initialization ---
+    const swiper = new Swiper('.testimonial-swiper', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 2,
+            },
+            1024: {
+                slidesPerView: 3,
+            }
+        }
+    });
+
     // Populate Select Dropdown
     services.forEach(service => {
         const option = document.createElement('option');
@@ -101,10 +137,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const windowHeight = window.innerHeight;
         const elementVisible = 50; // trigger earlier
 
-        reveals.forEach(reveal => {
+        reveals.forEach((reveal, index) => {
             const elementTop = reveal.getBoundingClientRect().top;
             if (elementTop < windowHeight - elementVisible) {
-                reveal.classList.add('active');
+                // Add staggered delay for sibling reveals if needed
+                if (!reveal.classList.contains('active')) {
+                    setTimeout(() => {
+                        reveal.classList.add('active');
+                    }, index % 3 * 100);
+                }
             }
         });
     };
