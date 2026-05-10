@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         preloader.classList.add('fade-out');
         setTimeout(() => preloader.remove(), 800);
-    }, 2000); // 2 second initial splash screen
+    }, 1000); // Reduced to 1 second for better UX
 
     // --- Custom Cursor Logic ---
     const cursor = document.getElementById('custom-cursor');
@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 })
             });
             
-            const result = await response.get_json ? await response.get_json() : await response.json();
+            const result = await response.json();
             
             if (response.ok) {
                 paymentMessage.innerHTML = `Success! Redirecting to secure gateway...<br><span class="text-xs text-gray-500 mt-2 block">Ref: ${result.reference}</span>`;
@@ -278,5 +278,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Mesh Gradient background on hero ---
     const hero = document.getElementById('hero');
     if (hero) hero.classList.add('mesh-gradient');
-} ) ;  
- 
+});
