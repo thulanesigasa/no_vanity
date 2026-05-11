@@ -55,7 +55,7 @@
     <!-- Lenis Smooth Scroll -->
     <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
 </head>
-<body class="bg-slate-50 dark:bg-[#040814] text-slate-600 dark:text-[#F8FAFC] font-sans antialiased transition-colors duration-300">
+<body class="bg-slate-50 dark:bg-[#040814] text-slate-600 dark:text-slate-300 font-sans antialiased transition-colors duration-300">
 
     <!-- Page Frame -->
     <div class="page-frame"></div>
@@ -82,12 +82,12 @@
                     }
                 })();
             </script>
-            <div class="preloader-text text-navy-900 dark:text-gold-DEFAULT transition-colors duration-300">No Vanity Consultancy</div>
+            <div class="preloader-text text-navy-900 dark:text-white transition-colors duration-300">No Vanity Consultancy</div>
         </div>
     </div>
 
     <!-- Navigation -->
-    <nav class="fixed w-full bg-white/95 dark:bg-[#040814]/95 backdrop-blur-md z-50 border-b border-gray-100 dark:border-gold-DEFAULT/20 py-4 px-6 md:px-12 flex justify-between items-center shadow-none transition-colors duration-300">
+    <nav class="fixed w-full bg-white/95 dark:bg-[#040814]/95 backdrop-blur-md z-50 border-b border-gray-100 dark:border-gold/10 py-4 px-6 md:px-12 flex justify-between items-center shadow-none transition-colors duration-300">
         <div>
             <!-- Theme Toggle Switch -->
             <div class="toggle-switch transform scale-75 origin-left">
@@ -97,43 +97,40 @@
               </label>
             </div> 
         </div>
-        <div class="hidden md:flex gap-8 text-sm font-medium text-slate-600 dark:text-[#F8FAFC]">
-            <a href="#hero" class="nav-link hover:text-gold-DEFAULT transition-colors duration-200 active text-gold-DEFAULT cursor-pointer">Home</a>
-            <a href="#services" class="nav-link hover:text-gold-DEFAULT transition-colors duration-200 cursor-pointer">Services</a>
-            <a href="#credentials" class="nav-link hover:text-gold-DEFAULT transition-colors duration-200 cursor-pointer">Credentials</a>
-            <a href="#checkout" class="nav-link hover:text-gold-DEFAULT transition-colors duration-200 cursor-pointer">Checkout</a>
+        <div class="hidden md:flex gap-8 text-sm font-medium text-slate-600 dark:text-slate-300">
+            <a href="#hero" class="nav-link hover:text-gold transition-colors duration-200 active text-gold cursor-pointer">Home</a>
+            <a href="#services" class="nav-link hover:text-gold transition-colors duration-200 cursor-pointer">Services</a>
+            <a href="#credentials" class="nav-link hover:text-gold transition-colors duration-200 cursor-pointer">Credentials</a>
+            <a href="#checkout" class="nav-link hover:text-gold transition-colors duration-200 cursor-pointer">Checkout</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="hero" class="pt-32 pb-20 md:pt-48 md:pb-32 px-6 md:px-12 flex flex-col items-center text-center reveal transition-colors duration-300">
-        <div class="mb-6 inline-flex items-center gap-2 px-3 py-1 rounded-full border border-gold-DEFAULT/30 text-gold-DEFAULT text-xs font-bold uppercase tracking-wider">
+        <div class="mb-6 inline-flex items-center gap-2 px-3 py-1 rounded-full border border-gold/30 text-gold text-xs font-bold uppercase tracking-wider">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
             </svg>
             Certified Corporate Consultants
         </div>
-        <h1 class="text-5xl md:text-7xl font-heading font-extrabold max-w-4xl leading-tight mb-4 text-navy-900 dark:text-gold-DEFAULT transition-colors duration-300">
-            No Vanity
+        <h1 class="text-4xl md:text-6xl font-heading font-extrabold max-w-4xl leading-tight mb-6 text-navy-900 dark:text-white transition-colors duration-300">
+            Secure Your Business Future in Zimbabwe with <span class="text-gold">Authority</span>
         </h1>
-        <h2 class="text-2xl md:text-4xl font-heading font-bold max-w-4xl leading-tight mb-6 text-slate-800 dark:text-white transition-colors duration-300">
-            Secure Your Business Future in Zimbabwe with Authority
-        </h2>
-        <p class="text-lg md:text-xl text-slate-600 dark:text-[#F8FAFC] max-w-2xl mb-10 leading-relaxed font-light transition-colors duration-300">
+        <p class="text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-2xl mb-10 leading-relaxed font-light transition-colors duration-300">
             We simplify company registration, ZIMRA tax clearances, and PRAZ tender compliance so you can operate with absolute legal confidence.
         </p>
         <div class="flex gap-4 flex-col sm:flex-row mb-20">
-            <a href="#services" class="px-8 py-3 rounded-md font-bold hover:opacity-90 transition-opacity duration-200 cursor-pointer bg-gold-DEFAULT text-white dark:text-[#040814]">
+            <a href="#services" class="px-8 py-3 rounded-md font-bold hover:opacity-90 transition-opacity duration-200 cursor-pointer bg-gold text-navy-900">
                 Explore Services
             </a>
-            <a href="#checkout" class="px-8 py-3 rounded-md font-bold hover:bg-black/5 dark:hover:bg-white/5 transition-colors duration-200 cursor-pointer border border-gold-DEFAULT text-gold-DEFAULT">
+            <a href="#checkout" class="px-8 py-3 rounded-md font-bold hover:bg-black/5 dark:hover:bg-white/5 transition-colors duration-200 cursor-pointer border border-gold text-gold">
                 Start Process Securely
             </a>
         </div>
 
         <!-- Rotating Scroll Down Badge -->
         <a href="#services" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'});return false;" class="absolute bottom-10 right-10 hidden lg:block opacity-50 hover:opacity-100 transition-opacity duration-300 cursor-pointer">
-            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 300 300" class="w-32 h-32 rotate-text text-gold-DEFAULT">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 300 300" class="w-32 h-32 rotate-text text-gold">
                 <defs>
                     <path id="circlePath" d="M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 " />
                 </defs>
@@ -145,7 +142,7 @@
                     </text>
                 </g>
             </svg>
-            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gold-DEFAULT">
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gold">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                 </svg>
@@ -154,14 +151,11 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="relative py-24 px-6 md:px-12 bg-slate-50 dark:bg-[#040814] reveal transition-colors duration-300">
-        <div class="absolute top-0 left-0 w-full bg-emerald-DEFAULT py-2 text-center text-white uppercase tracking-widest text-xs md:text-sm font-bold shadow-md">
-            BUSINESS REGISTRATION & TAX SOLUTIONS
-        </div>
-        <div class="max-w-6xl mx-auto pt-8">
+    <section id="services" class="py-24 px-6 md:px-12 bg-slate-50 dark:bg-transparent border-y border-gray-100 dark:border-gold/10 reveal transition-colors duration-300">
+        <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-navy-900 dark:text-white transition-colors duration-300">Our Official <span class="text-gold-DEFAULT">Services</span></h2>
-                <p class="text-slate-600 dark:text-[#F8FAFC] font-light transition-colors duration-300">Streamlining corporate compliance and financial administration.</p>
+                <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-navy-900 dark:text-white transition-colors duration-300">Our Official <span class="text-gold">Services</span></h2>
+                <p class="text-slate-600 dark:text-slate-300 font-light transition-colors duration-300">Streamlining corporate compliance and financial administration.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="services-grid">
                 <!-- Services injected via JS -->
@@ -170,57 +164,54 @@
     </section>
 
     <!-- Credentials & Metrics Section (Replaces "Why Us") -->
-    <section id="credentials" class="relative py-24 px-6 md:px-12 reveal bg-white dark:bg-[#040814] transition-colors duration-300">
-        <div class="absolute top-0 left-0 w-full bg-emerald-DEFAULT py-2 text-center text-white uppercase tracking-widest text-xs md:text-sm font-bold shadow-md">
-            PROVEN EXPERTISE & AUTHORITY
-        </div>
-        <div class="max-w-5xl mx-auto pt-8">
+    <section id="credentials" class="py-24 px-6 md:px-12 reveal bg-white dark:bg-transparent transition-colors duration-300">
+        <div class="max-w-5xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-navy-900 dark:text-white transition-colors duration-300">Proven <span class="text-gold-DEFAULT">Expertise</span> & Authority</h2>
-                <p class="text-slate-600 dark:text-[#F8FAFC] font-light max-w-2xl mx-auto transition-colors duration-300">We don't just fill forms; we provide guaranteed compliance strategies recognized by major Zimbabwean authorities.</p>
+                <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-navy-900 dark:text-white transition-colors duration-300">Proven <span class="text-gold">Expertise</span> & Authority</h2>
+                <p class="text-slate-600 dark:text-slate-300 font-light max-w-2xl mx-auto transition-colors duration-300">We don't just fill forms; we provide guaranteed compliance strategies recognized by major Zimbabwean authorities.</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mt-12">
-                <div class="p-8 bg-slate-50 dark:bg-transparent border border-gray-100 dark:border-gold-DEFAULT rounded-xl hover:border-gold-DEFAULT/40 dark:hover:bg-gold-DEFAULT/5 transition-colors duration-300">
+                <div class="p-8 bg-slate-50 dark:bg-transparent border border-gray-100 dark:border-gold/10 rounded-xl hover:border-gold/40 dark:hover:border-gold/40 transition-colors duration-300">
                     <div class="flex justify-center mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14 text-gold-DEFAULT metric-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14 text-gold metric-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
                         </svg>
                     </div>
                     <div class="text-4xl font-heading font-bold text-navy-900 dark:text-white mb-2 stat-reveal transition-colors duration-300">24h</div>
                     <h4 class="text-lg font-bold text-navy-900 dark:text-white mb-2 transition-colors duration-300">Turnaround Time</h4>
-                    <p class="text-sm text-slate-500 dark:text-[#F8FAFC] transition-colors duration-300">Expedited processing for ZIMRA ITF263 and PRAZ vendor registrations.</p>
+                    <p class="text-sm text-slate-500 dark:text-slate-300 transition-colors duration-300">Expedited processing for ZIMRA ITF263 and PRAZ vendor registrations.</p>
                 </div>
-                <div class="p-8 bg-slate-50 dark:bg-transparent border border-gray-100 dark:border-gold-DEFAULT rounded-xl hover:border-gold-DEFAULT/40 dark:hover:bg-gold-DEFAULT/5 transition-colors duration-300">
+                <div class="p-8 bg-slate-50 dark:bg-transparent border border-gray-100 dark:border-gold/10 rounded-xl hover:border-gold/40 dark:hover:border-gold/40 transition-colors duration-300">
                     <div class="flex justify-center mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14 text-gold-DEFAULT" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                     </div>
                     <div class="text-4xl font-heading font-bold text-navy-900 dark:text-white mb-2 stat-reveal transition-colors duration-300">100%</div>
                     <h4 class="text-lg font-bold text-navy-900 dark:text-white mb-2 transition-colors duration-300">Compliance Rate</h4>
-                    <p class="text-sm text-slate-500 dark:text-[#F8FAFC] transition-colors duration-300">Zero rejections. Deep expertise in Zimbabwean corporate law and taxation.</p>
+                    <p class="text-sm text-slate-500 dark:text-slate-300 transition-colors duration-300">Zero rejections. Deep expertise in Zimbabwean corporate law and taxation.</p>
                 </div>
-                <div class="p-8 bg-slate-50 dark:bg-transparent border border-gray-100 dark:border-gold-DEFAULT rounded-xl hover:border-gold-DEFAULT/40 dark:hover:bg-gold-DEFAULT/5 transition-colors duration-300">
+                <div class="p-8 bg-slate-50 dark:bg-transparent border border-gray-100 dark:border-gold/10 rounded-xl hover:border-gold/40 dark:hover:border-gold/40 transition-colors duration-300">
                     <div class="flex justify-center mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14 text-gold-DEFAULT" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                         </svg>
                     </div>
                     <div class="text-4xl font-heading font-bold text-navy-900 dark:text-white mb-2 stat-reveal transition-colors duration-300">Encrypted</div>
                     <h4 class="text-lg font-bold text-navy-900 dark:text-white mb-2 transition-colors duration-300">Secure Handling</h4>
-                    <p class="text-sm text-slate-500 dark:text-[#F8FAFC] transition-colors duration-300">Your corporate IP and personal documents are processed with bank-level privacy.</p>
+                    <p class="text-sm text-slate-500 dark:text-slate-300 transition-colors duration-300">Your corporate IP and personal documents are processed with bank-level privacy.</p>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="py-24 px-6 md:px-12 bg-slate-50 dark:bg-transparent border-y border-gray-100 dark:border-gold-DEFAULT/10 reveal overflow-hidden transition-colors duration-300">
+    <!-- Testimonials Section (Smooth Slidings) -->
+    <section id="testimonials" class="py-24 px-6 md:px-12 bg-slate-50 dark:bg-transparent border-y border-gray-100 dark:border-gold/10 reveal overflow-hidden transition-colors duration-300">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-navy-900 dark:text-white transition-colors duration-300">Client <span class="text-gold-DEFAULT">Success</span> Stories</h2>
-                <p class="text-slate-600 dark:text-[#F8FAFC] font-light transition-colors duration-300">Join 500+ businesses operating with absolute legal confidence.</p>
+                <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-navy-900 dark:text-white transition-colors duration-300">Client <span class="text-gold">Success</span> Stories</h2>
+                <p class="text-slate-600 dark:text-slate-300 font-light transition-colors duration-300">Join 500+ businesses operating with absolute legal confidence.</p>
             </div>
             
             <!-- Swiper -->
@@ -228,39 +219,39 @@
                 <div class="swiper-wrapper">
                     <!-- Slide 1 -->
                     <div class="swiper-slide">
-                        <div class="p-10 bg-white dark:bg-transparent border border-gray-100 dark:border-gold-DEFAULT/30 rounded-2xl h-full flex flex-col justify-between hover:border-gold-DEFAULT/50 transition-colors duration-300">
-                            <p class="text-lg italic text-slate-600 dark:text-[#F8FAFC] mb-8 font-light transition-colors duration-300">"No Vanity handled our company registration and ZIMRA setup in record time. Their authority in the Zimbabwean market is unmatched."</p>
+                        <div class="p-10 bg-white dark:bg-transparent border border-gray-100 dark:border-gold/10 rounded-2xl h-full flex flex-col justify-between transition-colors duration-300">
+                            <p class="text-lg italic text-slate-600 dark:text-slate-300 mb-8 font-light transition-colors duration-300">"No Vanity handled our company registration and ZIMRA setup in record time. Their authority in the Zimbabwean market is unmatched."</p>
                             <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 rounded-full bg-gold-DEFAULT flex items-center justify-center font-bold text-navy-900 dark:text-[#040814] transition-colors duration-300">TN</div>
+                                <div class="w-12 h-12 rounded-full bg-gold flex items-center justify-center font-bold text-navy-900 dark:text-[#040814]">TN</div>
                                 <div class="text-left">
                                     <h4 class="text-navy-900 dark:text-white font-bold transition-colors duration-300">Tadiwa Nyoni</h4>
-                                    <p class="text-xs text-gold-DEFAULT uppercase tracking-widest">CEO, TechZim Solutions</p>
+                                    <p class="text-xs text-gold uppercase tracking-widest">CEO, TechZim Solutions</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- Slide 2 -->
                     <div class="swiper-slide">
-                        <div class="p-10 bg-white dark:bg-transparent border border-gray-100 dark:border-gold-DEFAULT/30 rounded-2xl h-full flex flex-col justify-between hover:border-gold-DEFAULT/50 transition-colors duration-300">
-                            <p class="text-lg italic text-slate-600 dark:text-[#F8FAFC] mb-8 font-light transition-colors duration-300">"Absolute professionals. The ITF263 clearance process was seamless. They are now our permanent corporate consultants."</p>
+                        <div class="p-10 bg-white dark:bg-transparent border border-gray-100 dark:border-gold/10 rounded-2xl h-full flex flex-col justify-between transition-colors duration-300">
+                            <p class="text-lg italic text-slate-600 dark:text-slate-300 mb-8 font-light transition-colors duration-300">"Absolute professionals. The ITF263 clearance process was seamless. They are now our permanent corporate consultants."</p>
                             <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 rounded-full bg-emerald-DEFAULT flex items-center justify-center font-bold text-white transition-colors duration-300">SM</div>
+                                <div class="w-12 h-12 rounded-full bg-emerald flex items-center justify-center font-bold text-white">SM</div>
                                 <div class="text-left">
                                     <h4 class="text-navy-900 dark:text-white font-bold transition-colors duration-300">Sarah Moyo</h4>
-                                    <p class="text-xs text-gold-DEFAULT uppercase tracking-widest">Director, Moyo Logistics</p>
+                                    <p class="text-xs text-gold uppercase tracking-widest">Director, Moyo Logistics</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- Slide 3 -->
                     <div class="swiper-slide">
-                        <div class="p-10 bg-white dark:bg-transparent border border-gray-100 dark:border-gold-DEFAULT/30 rounded-2xl h-full flex flex-col justify-between hover:border-gold-DEFAULT/50 transition-colors duration-300">
-                            <p class="text-lg italic text-slate-600 dark:text-[#F8FAFC] mb-8 font-light transition-colors duration-300">"Navigating PRAZ tenders was a nightmare until we found No Vanity. Their guidance secured us a major government contract."</p>
+                        <div class="p-10 bg-white dark:bg-transparent border border-gray-100 dark:border-gold/10 rounded-2xl h-full flex flex-col justify-between transition-colors duration-300">
+                            <p class="text-lg italic text-slate-600 dark:text-slate-300 mb-8 font-light transition-colors duration-300">"Navigating PRAZ tenders was a nightmare until we found No Vanity. Their guidance secured us a major government contract."</p>
                             <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 rounded-full bg-gold-DEFAULT flex items-center justify-center font-bold text-navy-900 dark:text-[#040814] transition-colors duration-300">KM</div>
+                                <div class="w-12 h-12 rounded-full bg-gold flex items-center justify-center font-bold text-navy-900 dark:text-[#040814]">KM</div>
                                 <div class="text-left">
                                     <h4 class="text-navy-900 dark:text-white font-bold transition-colors duration-300">Kelvin Mutasa</h4>
-                                    <p class="text-xs text-gold-DEFAULT uppercase tracking-widest">Founder, KM Construction</p>
+                                    <p class="text-xs text-gold uppercase tracking-widest">Founder, KM Construction</p>
                                 </div>
                             </div>
                         </div>
@@ -273,45 +264,42 @@
     </section>
 
     <!-- Checkout / Contact Section -->
-    <section id="checkout" class="relative py-24 px-6 md:px-12 bg-white dark:bg-[#040814] reveal transition-colors duration-300">
-        <div class="absolute top-0 left-0 w-full bg-emerald-DEFAULT py-2 text-center text-white uppercase tracking-widest text-xs md:text-sm font-bold shadow-md">
-            SECURE APPLICATION PORTAL
-        </div>
-        <div class="max-w-3xl mx-auto bg-slate-50 dark:bg-transparent p-8 md:p-14 rounded-2xl border border-gray-100 dark:border-gold-DEFAULT pt-12 mt-8 transition-colors duration-300">
+    <section id="checkout" class="py-24 px-6 md:px-12 bg-white dark:bg-transparent border-t border-gray-100 dark:border-gold/10 reveal transition-colors duration-300">
+        <div class="max-w-3xl mx-auto bg-slate-50 dark:bg-transparent p-8 md:p-14 rounded-2xl border border-gray-100 dark:border-gold/20 transition-colors duration-300">
             <div class="flex justify-center mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-emerald-DEFAULT" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-emerald" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                 </svg>
             </div>
-            <h2 class="text-3xl font-heading font-bold mb-2 text-center text-navy-900 dark:text-white transition-colors duration-300">Secure Application <span class="text-gold-DEFAULT">Portal</span></h2>
-            <p class="text-center text-slate-600 dark:text-[#F8FAFC] mb-10 font-light transition-colors duration-300">Initiate your engagement with our official processing team.</p>
+            <h2 class="text-3xl font-heading font-bold mb-2 text-center text-navy-900 dark:text-white transition-colors duration-300">Secure Application <span class="text-gold">Portal</span></h2>
+            <p class="text-center text-slate-600 dark:text-slate-300 mb-10 font-light transition-colors duration-300">Initiate your engagement with our official processing team.</p>
             
             <form id="checkout-form" class="space-y-6">
                 <div>
-                    <label class="block text-sm font-bold text-slate-600 dark:text-white mb-2 transition-colors duration-300">Select Service</label>
-                    <select id="service-select" class="w-full bg-white dark:bg-[#040814] border border-gray-200 dark:border-gold-DEFAULT/50 text-navy-900 dark:text-white rounded-md p-4 focus:outline-none focus:ring-2 focus:ring-gold-DEFAULT focus:border-gold-DEFAULT transition-all duration-200 cursor-pointer">
+                    <label class="block text-sm font-bold text-slate-600 dark:text-slate-300 mb-2 transition-colors duration-300">Select Service</label>
+                    <select id="service-select" class="w-full bg-white dark:bg-[#040814] border border-gray-200 dark:border-gold/30 text-navy-900 dark:text-white rounded-md p-4 focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold transition-all duration-200 cursor-pointer">
                         <!-- Options injected via JS -->
                     </select>
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                        <label class="block text-sm font-bold text-slate-600 dark:text-white mb-2 transition-colors duration-300">Full Legal Name</label>
-                        <input type="text" id="full-name" required class="w-full bg-white dark:bg-transparent border border-gray-200 dark:border-gold-DEFAULT/50 text-navy-900 dark:text-white rounded-md p-4 focus:outline-none focus:ring-2 focus:ring-gold-DEFAULT focus:border-gold-DEFAULT transition-all duration-200 placeholder-slate-400 dark:placeholder-slate-500" placeholder="John Doe">
+                        <label class="block text-sm font-bold text-slate-600 dark:text-slate-300 mb-2 transition-colors duration-300">Full Legal Name</label>
+                        <input type="text" id="full-name" required class="w-full bg-white dark:bg-transparent border border-gray-200 dark:border-gold/30 text-navy-900 dark:text-white rounded-md p-4 focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold transition-all duration-200 placeholder-slate-400 dark:placeholder-slate-500" placeholder="John Doe">
                     </div>
                     <div>
-                        <label class="block text-sm font-bold text-slate-600 dark:text-white mb-2 transition-colors duration-300">Phone Number</label>
-                        <input type="tel" id="phone" required class="w-full bg-white dark:bg-transparent border border-gray-200 dark:border-gold-DEFAULT/50 text-navy-900 dark:text-white rounded-md p-4 focus:outline-none focus:ring-2 focus:ring-gold-DEFAULT focus:border-gold-DEFAULT transition-all duration-200 placeholder-slate-400 dark:placeholder-slate-500" placeholder="+263 77...">
+                        <label class="block text-sm font-bold text-slate-600 dark:text-slate-300 mb-2 transition-colors duration-300">Phone Number</label>
+                        <input type="tel" id="phone" required class="w-full bg-white dark:bg-transparent border border-gray-200 dark:border-gold/30 text-navy-900 dark:text-white rounded-md p-4 focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold transition-all duration-200 placeholder-slate-400 dark:placeholder-slate-500" placeholder="+263 77...">
                     </div>
                 </div>
                 
                 <div>
-                    <label class="block text-sm font-bold text-slate-600 dark:text-white mb-2 transition-colors duration-300">Email Address</label>
-                    <input type="email" id="email" required class="w-full bg-white dark:bg-transparent border border-gray-200 dark:border-gold-DEFAULT/50 text-navy-900 dark:text-white rounded-md p-4 focus:outline-none focus:ring-2 focus:ring-gold-DEFAULT focus:border-gold-DEFAULT transition-all duration-200 placeholder-slate-400 dark:placeholder-slate-500" placeholder="john@example.com">
+                    <label class="block text-sm font-bold text-slate-600 dark:text-slate-300 mb-2 transition-colors duration-300">Email Address</label>
+                    <input type="email" id="email" required class="w-full bg-white dark:bg-transparent border border-gray-200 dark:border-gold/30 text-navy-900 dark:text-white rounded-md p-4 focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold transition-all duration-200 placeholder-slate-400 dark:placeholder-slate-500" placeholder="john@example.com">
                 </div>
                 
                 <div class="pt-4">
-                    <button type="submit" id="submit-btn" class="w-full bg-gold-DEFAULT text-white dark:text-[#040814] font-bold py-4 rounded-md hover:opacity-90 transition-opacity duration-200 flex items-center justify-center gap-2 cursor-pointer">
+                    <button type="submit" id="submit-btn" class="w-full bg-gold text-navy-900 dark:text-[#040814] font-bold py-4 rounded-md hover:bg-gold-hover transition-colors duration-200 flex items-center justify-center gap-2 cursor-pointer">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
                         </svg>
@@ -325,7 +313,7 @@
     </section>
 
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/263785029078?text=Hi%20No%20Vanity%20team%2C%20I%20need%20help%20with%20my%20business%20registration%2Ftaxes." target="_blank" rel="noopener noreferrer" class="fixed bottom-8 right-8 bg-emerald-DEFAULT text-white p-4 rounded-full hover:scale-110 transition-transform duration-300 z-50 flex items-center justify-center cursor-pointer group" aria-label="Chat on WhatsApp">
+    <a href="https://wa.me/263770000000?text=Hi%20No%20Vanity%20team%2C%20I%20need%20help%20with%20my%20business%20registration%2Ftaxes." target="_blank" rel="noopener noreferrer" class="fixed bottom-8 right-8 bg-emerald text-white p-4 rounded-full hover:scale-110 transition-transform duration-300 z-50 flex items-center justify-center cursor-pointer group" aria-label="Chat on WhatsApp">
         <!-- SVG icon kept from before -->
         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 16 16" class="group-hover:animate-pulse">
             <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
@@ -333,7 +321,7 @@
     </a>
     
     <!-- Footer -->
-    <footer class="py-12 bg-slate-100 dark:bg-[#040814] border-t border-gray-200 dark:border-gold-DEFAULT/30 text-center text-sm text-slate-500 dark:text-[#F8FAFC] transition-colors duration-300">
+    <footer class="py-12 bg-slate-100 dark:bg-[#040814] border-t border-gray-200 dark:border-gold/10 text-center text-sm text-slate-500 dark:text-slate-400 transition-colors duration-300">
         <div class="mb-4 flex justify-center">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-navy-900/30 dark:text-white/30 transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />

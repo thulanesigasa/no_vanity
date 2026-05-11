@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const seeMoreContainer = document.createElement('div');
     seeMoreContainer.className = 'col-span-1 md:col-span-2 lg:col-span-3 flex justify-center mt-8';
     const seeMoreBtn = document.createElement('button');
-    seeMoreBtn.className = 'border border-gold-DEFAULT text-gold-DEFAULT px-8 py-3 rounded-md font-bold hover:bg-gold-DEFAULT/10 transition-colors duration-200 cursor-pointer';
+    seeMoreBtn.className = 'border border-gold text-gold px-8 py-3 rounded-md font-bold hover:bg-gold/10 transition-colors duration-200 cursor-pointer';
     seeMoreBtn.textContent = 'View All Services';
     seeMoreContainer.appendChild(seeMoreBtn);
 
@@ -110,20 +110,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const createServiceCard = (service, index) => {
         const mtClass = index % 2 !== 0 ? 'lg:mt-12' : '';
         const div = document.createElement('div');
-        div.className = `bg-white dark:bg-transparent border border-gray-100 dark:border-gold-DEFAULT p-10 rounded-none transition-all duration-300 group cursor-pointer ${mtClass} reveal`;
+        div.className = `bg-white dark:bg-transparent border border-gray-100 dark:border-gold/10 border-l-2 p-10 rounded-none transition-all duration-300 group cursor-pointer ${mtClass} reveal`;
+        div.style.cssText = 'border-left-color: transparent;';
+        div.addEventListener('mouseenter', () => {
+            div.style.borderLeftColor = '#D4AF37';
+            cursor.classList.add('hover');
+        });
+        div.addEventListener('mouseleave', () => {
+            div.style.borderLeftColor = 'transparent';
+            cursor.classList.remove('hover');
+        });
         div.innerHTML = `
-            <div class="text-gold-DEFAULT/50 text-5xl font-heading mb-6 group-hover:text-gold-DEFAULT transition-colors">0${index + 1}</div>
-            <h3 class="text-2xl font-heading font-bold mb-4 text-navy-900 dark:text-white group-hover:text-gold-DEFAULT transition-colors">${service.name}</h3>
-            
-            <div class="flex items-start gap-3 mb-8">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gold-DEFAULT flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                </svg>
-                <p class="text-slate-600 dark:text-[#F8FAFC] font-light leading-relaxed transition-colors">${service.description}</p>
-            </div>
-            
-            <div class="flex justify-between items-center border-t border-gray-100 dark:border-gold-DEFAULT/30 pt-6 text-gold-DEFAULT transition-colors">
-                <span class="text-sm font-bold uppercase tracking-wider text-navy-900 dark:text-white group-hover:text-gold-DEFAULT transition-colors">Request Info</span>
+            <div class="text-gold/30 text-5xl font-heading mb-4 group-hover:text-gold transition-colors">0${index + 1}</div>
+            <h3 class="text-2xl font-heading font-bold mb-4 text-navy-900 dark:text-white group-hover:text-gold transition-colors">${service.name}</h3>
+            <p class="text-slate-600 dark:text-slate-300 mb-8 font-light leading-relaxed">${service.description}</p>
+            <div class="flex justify-between items-center border-t border-gray-100 dark:border-gold/10 pt-6 text-gold">
+                <span class="text-sm font-bold uppercase tracking-wider group-hover:text-navy-900 dark:group-hover:text-white transition-colors">Request Info</span>
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform group-hover:translate-x-2 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
@@ -220,19 +222,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         navLinks.forEach(link => {
-            link.classList.remove('text-gold-DEFAULT');
+            link.classList.remove('text-gold');
             if (link.getAttribute('href').includes(current)) {
-                link.classList.add('text-gold-DEFAULT');
+                link.classList.add('text-gold');
             }
         });
     });
 
-    // --- Handle Form Submission ---
+    // --- Handle Form Submission (WhatsApp Integration) ---
     const checkoutForm = document.getElementById('checkout-form');
     const submitBtn = document.getElementById('submit-btn');
     const paymentMessage = document.getElementById('payment-message');
 
-    checkoutForm.addEventListener('submit', async (e) => {
+    checkoutForm.addEventListener('submit', (e) => {
         e.preventDefault();
         
         submitBtn.disabled = true;
@@ -242,40 +244,28 @@ document.addEventListener('DOMContentLoaded', () => {
         paymentMessage.classList.add('hidden');
         paymentMessage.className = 'mt-4 p-4 rounded-md text-center font-medium border'; // Reset classes
         
-        // Call Real Backend API
-        try {
-            const response = await fetch('/api/payment', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    service: document.getElementById('service-select').value,
-                    fullName: document.getElementById('full-name').value,
-                    phone: document.getElementById('phone').value,
-                    email: document.getElementById('email').value
-                })
-            });
-            
-            const result = await response.json();
-            
-            if (response.ok) {
-                paymentMessage.innerHTML = `✅ Submission received! Redirecting to secure payment gateway in 3 seconds...<br><span class="text-xs text-gray-500 mt-2 block">Ref: ${result.reference}</span>`;
-                paymentMessage.classList.add('border-emerald-DEFAULT/30', 'bg-emerald-DEFAULT/10', 'text-emerald-DEFAULT', 'block');
-                paymentMessage.classList.remove('hidden');
+        const serviceSelect = document.getElementById('service-select');
+        const serviceName = serviceSelect.options[serviceSelect.selectedIndex].text;
+        const fullName = document.getElementById('full-name').value;
+        const phone = document.getElementById('phone').value;
+        const email = document.getElementById('email').value;
 
-                // Redirect to payment gateway
-                setTimeout(() => { window.location.href = result.paymentUrl; }, 3000);
-            } else {
-                throw new Error(result.error || 'Server error');
-            }
-        } catch (error) {
-            paymentMessage.textContent = error.message;
-            paymentMessage.classList.add('border-red-500/30', 'bg-red-500/10', 'text-red-400', 'block');
-            paymentMessage.classList.remove('hidden');
-        }
+        const message = `Hello No Vanity Consultancy, I would like to inquire about your services.\n\n*Service*: ${serviceName}\n*Name*: ${fullName}\n*Phone*: ${phone}\n*Email*: ${email}\n\nPlease let me know the next steps.`;
         
-        submitBtn.disabled = false;
-        submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
-        submitBtn.innerHTML = 'Proceed to Encrypted Payment';
+        const whatsappNumber = "263785029078";
+        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+        paymentMessage.innerHTML = `✅ Submission received! Redirecting to our official WhatsApp portal...`;
+        paymentMessage.classList.remove('hidden');
+        paymentMessage.classList.add('border-emerald/30', 'bg-emerald/10', 'text-emerald', 'block');
+
+        // Redirect to WhatsApp gateway
+        setTimeout(() => { 
+            window.location.href = whatsappUrl; 
+            submitBtn.disabled = false;
+            submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+            submitBtn.innerHTML = 'Proceed to Encrypted Payment';
+        }, 1500);
     });
 
     // Hero paragraph is static — TextScramble removed for immediate legibility.
