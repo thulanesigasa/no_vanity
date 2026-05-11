@@ -48,15 +48,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Services Data ---
     const services = [
-        { id: 'itf263',       name: 'Tax Clearance (ITF263)',              description: 'Expedited processing for annual and periodic tax compliance certificates recognized by ZIMRA.' },
-        { id: 'company_reg',  name: 'Company Registration & Re-Reg',      description: 'Seamless legal filing for new ventures, corporate name changes, and re-registration updates.' },
-        { id: 'shop_license', name: 'Shop Licencing',                     description: 'Regulatory assistance for obtaining all required municipal and trade operating permits.' },
-        { id: 'praz_tender',  name: 'PRAZ Tender Registration',           description: 'Comprehensive vendor registration for government and private-sector procurement tenders.' },
-        { id: 'zimra_returns',name: 'ZIMRA Tax Returns',                  description: 'Accurate preparation and timely submission of corporate and individual tax returns.' },
-        { id: 'bookkeeping',  name: 'Professional Bookkeeping',           description: 'High-integrity financial record-keeping, reconciliation, and management reporting.' },
-        { id: 'printing',     name: 'Printing & Design',                  description: 'High-quality corporate branding materials — business cards, letterheads, and flyers.' },
-        { id: 'web_design',   name: 'Website Design & Hosting',           description: 'Fast, responsive, and SEO-optimized digital presence solutions built for Zimbabwean businesses.' },
-        { id: 'social_media', name: 'Social Media Marketing',             description: 'Targeted digital marketing campaigns on Facebook, Instagram & LinkedIn to drive real business growth.' }
+        { id: 'itf263',       name: 'Tax Clearance (ITF263)',              description: 'Expedited processing for annual and periodic tax compliance.' },
+        { id: 'company_reg',  name: 'Company Registration & Re-Registration',      description: 'Seamless legal filing for new ventures and corporate updates.' },
+        { id: 'shop_license', name: 'Shop Licencing',                     description: 'Regulatory assistance for obtaining municipal and trade permits.' },
+        { id: 'praz_tender',  name: 'PRAZ Tender Registration',           description: 'Comprehensive vendor registration for government and private tenders.' },
+        { id: 'zimra_returns',name: 'ZIMRA Tax Returns',                  description: 'Accurate preparation and submission of corporate and individual tax filings.' },
+        { id: 'bookkeeping',  name: 'Professional Bookkeeping',           description: 'High-integrity financial record-keeping and reporting services.' },
+        { id: 'printing',     name: 'Printing & Design',                  description: 'High-quality corporate branding materials, business cards, and flyers.' },
+        { id: 'web_design',   name: 'Website Design & Hosting',           description: 'Fast, responsive, and SEO-optimized digital presence solutions.' },
+        { id: 'social_media', name: 'Social Media Marketing Campaigns',             description: 'Targeted digital marketing strategies to drive real business growth.' }
     ];
 
     // --- Populate Services Grid (Editorial / Asymmetric style) ---
