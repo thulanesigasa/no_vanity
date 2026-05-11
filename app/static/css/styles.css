@@ -31,7 +31,7 @@ a, button, select, input, .cursor-pointer {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: #0A1128;
+    background-color: #ffffff;
     z-index: 9999;
     display: flex;
     justify-content: center;
@@ -46,7 +46,7 @@ a, button, select, input, .cursor-pointer {
 .preloader-text {
     font-family: 'EB Garamond', serif;
     font-size: 2rem;
-    color: #D4AF37;
+    color: #D4AF37; /* Gold on white — retained */
     opacity: 0;
     animation: pulseText 2s ease-in-out infinite alternate;
 }
@@ -63,7 +63,7 @@ a, button, select, input, .cursor-pointer {
     left: 0;
     width: 20px;
     height: 20px;
-    border: 2px solid #D4AF37;
+    border: 2px solid #060B19;
     border-radius: 50%;
     pointer-events: none;
     z-index: 10000;
@@ -77,7 +77,7 @@ a, button, select, input, .cursor-pointer {
 .custom-cursor.hover {
     width: 60px;
     height: 60px;
-    background-color: rgba(212, 175, 55, 0.1);
+    background-color: rgba(6, 11, 25, 0.07);
     backdrop-filter: blur(2px);
 }
 
@@ -101,7 +101,7 @@ a, button, select, input, .cursor-pointer {
     left: 1.5rem;
     right: 1.5rem;
     bottom: 1.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
     pointer-events: none;
     z-index: 40;
 }
@@ -157,10 +157,10 @@ a, button, select, input, .cursor-pointer {
     width: 6px;
 }
 ::-webkit-scrollbar-track {
-    background: #0A1128; 
+    background: #F1F5F9;
 }
 ::-webkit-scrollbar-thumb {
-    background: #334155; 
+    background: #CBD5E1;
     border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -186,17 +186,19 @@ a, button, select, input, .cursor-pointer {
 
 /* Form inputs autocomplete style fixing for dark mode */
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
-input:-webkit-autofill:active{
-    -webkit-box-shadow: 0 0 0 30px #0F1A3A inset !important;
-    -webkit-text-fill-color: white !important;
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #F1F5F9 inset !important;
+    -webkit-text-fill-color: #060B19 !important;
 }
 
 /* Mesh Gradient */
 .mesh-gradient {
-    background: radial-gradient(at 0% 0%, rgba(212, 175, 55, 0.05) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(80, 200, 120, 0.05) 0px, transparent 50%);
+    background:
+        radial-gradient(at 15% 20%, rgba(212, 175, 55, 0.12) 0px, transparent 55%),
+        radial-gradient(at 85% 80%, rgba(80, 200, 120, 0.08) 0px, transparent 55%),
+        radial-gradient(at 50% 50%, rgba(248, 250, 252, 1) 0px, transparent 100%);
     position: relative;
 }
 
@@ -208,5 +210,5 @@ input:-webkit-autofill:active{
 
 /* Admin Styles */
 .admin-row:hover {
-    background-color: rgba(212, 175, 55, 0.05);
+    background-color: rgba(212, 175, 55, 0.08);
 }
