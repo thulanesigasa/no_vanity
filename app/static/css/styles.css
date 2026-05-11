@@ -51,6 +51,12 @@ a, button, select, input, .cursor-pointer {
     animation: pulseText 2s ease-in-out infinite alternate;
 }
 
+.preloader-logo {
+    opacity: 0;
+    animation: pulseText 2s ease-in-out infinite alternate;
+    animation-delay: 0.2s;
+}
+
 @keyframes pulseText {
     0% { opacity: 0.3; transform: scale(0.98); }
     100% { opacity: 1; transform: scale(1.02); }

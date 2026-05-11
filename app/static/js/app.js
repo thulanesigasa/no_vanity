@@ -48,12 +48,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Services Data ---
     const services = [
-        { id: 'company_reg', name: 'Company Registration' },
-        { id: 'zimra_tax', name: 'ZIMRA Tax Clearance (ITF263)' },
-        { id: 'praz_tender', name: 'PRAZ Tender Registration' },
-        { id: 'shop_license', name: 'Shop Licensing Harare' },
-        { id: 'bookkeeping', name: 'Professional Bookkeeping' },
-        { id: 'trade_marks', name: 'Trademarks & IP' }
+        { id: 'itf263',       name: 'Tax Clearance (ITF263)',              description: 'Expedited processing for annual and periodic tax compliance certificates recognized by ZIMRA.' },
+        { id: 'company_reg',  name: 'Company Registration & Re-Reg',      description: 'Seamless legal filing for new ventures, corporate name changes, and re-registration updates.' },
+        { id: 'shop_license', name: 'Shop Licencing',                     description: 'Regulatory assistance for obtaining all required municipal and trade operating permits.' },
+        { id: 'praz_tender',  name: 'PRAZ Tender Registration',           description: 'Comprehensive vendor registration for government and private-sector procurement tenders.' },
+        { id: 'zimra_returns',name: 'ZIMRA Tax Returns',                  description: 'Accurate preparation and timely submission of corporate and individual tax returns.' },
+        { id: 'bookkeeping',  name: 'Professional Bookkeeping',           description: 'High-integrity financial record-keeping, reconciliation, and management reporting.' },
+        { id: 'printing',     name: 'Printing & Design',                  description: 'High-quality corporate branding materials — business cards, letterheads, and flyers.' },
+        { id: 'web_design',   name: 'Website Design & Hosting',           description: 'Fast, responsive, and SEO-optimized digital presence solutions built for Zimbabwean businesses.' },
+        { id: 'social_media', name: 'Social Media Marketing',             description: 'Targeted digital marketing campaigns on Facebook, Instagram & LinkedIn to drive real business growth.' }
     ];
 
     // --- Populate Services Grid (Editorial / Asymmetric style) ---
@@ -120,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
         div.innerHTML = `
             <div class="text-gold-DEFAULT/30 text-5xl font-heading mb-4 group-hover:text-gold-DEFAULT/60 transition-colors">0${index + 1}</div>
             <h3 class="text-2xl font-heading font-bold mb-4 text-navy-900 group-hover:text-navy-DEFAULT transition-colors">${service.name}</h3>
-            <p class="text-slate-500 mb-8 font-light leading-relaxed">Expert administration and legal filing to ensure complete compliance.</p>
+            <p class="text-slate-500 mb-8 font-light leading-relaxed">${service.description}</p>
             <div class="flex justify-between items-center border-t border-gray-100 pt-6 text-gold-DEFAULT">
                 <span class="text-sm font-bold uppercase tracking-wider group-hover:text-navy-900 transition-colors">Request Info</span>
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform group-hover:translate-x-2 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -277,66 +280,7 @@ document.addEventListener('DOMContentLoaded', () => {
         submitBtn.innerHTML = 'Proceed to Encrypted Payment';
     });
 
-    // --- Liveness: Text Scramble Effect ---
-    class TextScramble {
-        constructor(el) {
-            this.el = el;
-            this.chars = '!<>-_\\/[]{}—=+*^?#________';
-            this.update = this.update.bind(this);
-        }
-        setText(newText) {
-            const oldText = this.el.innerText;
-            const length = Math.max(oldText.length, newText.length);
-            const promise = new Promise((resolve) => this.resolve = resolve);
-            this.queue = [];
-            for (let i = 0; i < length; i++) {
-                const from = oldText[i] || '';
-                const to = newText[i] || '';
-                const start = Math.floor(Math.random() * 40);
-                const end = start + Math.floor(Math.random() * 40);
-                this.queue.push({ from, to, start, end });
-            }
-            cancelAnimationFrame(this.frameRequest);
-            this.frame = 0;
-            this.update();
-            return promise;
-        }
-        update() {
-            let output = '';
-            let complete = 0;
-            for (let i = 0, n = this.queue.length; i < n; i++) {
-                let { from, to, start, end, char } = this.queue[i];
-                if (this.frame >= end) {
-                    complete++;
-                    output += to;
-                } else if (this.frame >= start) {
-                    if (!char || Math.random() < 0.28) {
-                        char = this.randomChar();
-                        this.queue[i].char = char;
-                    }
-                    output += `<span class="opacity-50 text-gold-DEFAULT">${char}</span>`;
-                } else {
-                    output += from;
-                }
-            }
-            this.el.innerHTML = output;
-            if (complete === this.queue.length) {
-                this.resolve();
-            } else {
-                this.frameRequest = requestAnimationFrame(this.update);
-                this.frame++;
-            }
-        }
-        randomChar() {
-            return this.chars[Math.floor(Math.random() * this.chars.length)];
-        }
-    }
-
-    const heroSub = document.querySelector('#hero p');
-    if (heroSub) {
-        const scrambler = new TextScramble(heroSub);
-        setTimeout(() => scrambler.setText('We simplify company registration, ZIMRA tax clearances, and PRAZ tender compliance so you can operate with absolute legal confidence.'), 1500);
-    }
+    // Hero paragraph is static — TextScramble removed for immediate legibility.
 
     // --- Stat Count Up Animation ---
     const stats = document.querySelectorAll('.stat-reveal');
