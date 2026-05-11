@@ -110,20 +110,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const createServiceCard = (service, index) => {
         const mtClass = index % 2 !== 0 ? 'lg:mt-12' : '';
         const div = document.createElement('div');
-        div.className = `bg-transparent border border-gold-DEFAULT p-10 rounded-none transition-all duration-300 group cursor-pointer ${mtClass} reveal`;
+        div.className = `bg-white dark:bg-transparent border border-gray-100 dark:border-gold-DEFAULT p-10 rounded-none transition-all duration-300 group cursor-pointer ${mtClass} reveal`;
         div.innerHTML = `
             <div class="text-gold-DEFAULT/50 text-5xl font-heading mb-6 group-hover:text-gold-DEFAULT transition-colors">0${index + 1}</div>
-            <h3 class="text-2xl font-heading font-bold mb-4 text-white group-hover:text-gold-DEFAULT transition-colors">${service.name}</h3>
+            <h3 class="text-2xl font-heading font-bold mb-4 text-navy-900 dark:text-white group-hover:text-gold-DEFAULT transition-colors">${service.name}</h3>
             
             <div class="flex items-start gap-3 mb-8">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gold-DEFAULT flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
-                <p class="text-[#F8FAFC] font-light leading-relaxed">${service.description}</p>
+                <p class="text-slate-600 dark:text-[#F8FAFC] font-light leading-relaxed transition-colors">${service.description}</p>
             </div>
             
-            <div class="flex justify-between items-center border-t border-gold-DEFAULT/30 pt-6 text-gold-DEFAULT">
-                <span class="text-sm font-bold uppercase tracking-wider text-white transition-colors">Request Info</span>
+            <div class="flex justify-between items-center border-t border-gray-100 dark:border-gold-DEFAULT/30 pt-6 text-gold-DEFAULT transition-colors">
+                <span class="text-sm font-bold uppercase tracking-wider text-navy-900 dark:text-white group-hover:text-gold-DEFAULT transition-colors">Request Info</span>
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform group-hover:translate-x-2 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
@@ -315,4 +315,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Initialize Data ---
     renderServices();
+
+    // --- Theme Toggle Logic ---
+    const themeToggle = document.getElementById('theme-toggle');
+    const htmlElement = document.documentElement;
+
+    if (themeToggle) {
+        // Unchecked = Dark Mode (default). Checked = Light Mode.
+        themeToggle.checked = !htmlElement.classList.contains('dark');
+        
+        themeToggle.addEventListener('change', () => {
+            if (themeToggle.checked) {
+                htmlElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                htmlElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    }
 });
