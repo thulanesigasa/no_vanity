@@ -48,15 +48,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Services Data ---
     const services = [
-        { id: 'itf263',       name: 'Tax Clearance (ITF263)',              description: 'Expedited processing for annual and periodic tax compliance.' },
-        { id: 'company_reg',  name: 'Company Registration & Re-Registration',      description: 'Seamless legal filing for new ventures and corporate updates.' },
-        { id: 'shop_license', name: 'Shop Licencing',                     description: 'Regulatory assistance for obtaining municipal and trade permits.' },
-        { id: 'praz_tender',  name: 'PRAZ Tender Registration',           description: 'Comprehensive vendor registration for government and private tenders.' },
-        { id: 'zimra_returns',name: 'ZIMRA Tax Returns',                  description: 'Accurate preparation and submission of corporate and individual tax filings.' },
-        { id: 'bookkeeping',  name: 'Professional Bookkeeping',           description: 'High-integrity financial record-keeping and reporting services.' },
-        { id: 'printing',     name: 'Printing & Design',                  description: 'High-quality corporate branding materials, business cards, and flyers.' },
-        { id: 'web_design',   name: 'Website Design & Hosting',           description: 'Fast, responsive, and SEO-optimized digital presence solutions.' },
-        { id: 'social_media', name: 'Social Media Marketing Campaigns',             description: 'Targeted digital marketing strategies to drive real business growth.' }
+        { id: 'itf263',       name: 'Tax Clearance (ITF263)',              description: 'Expedited annual and periodic tax compliance.' },
+        { id: 'company_reg',  name: 'Company Registration & Re-Registration',      description: 'Seamless legal filing for new ventures and updates.' },
+        { id: 'shop_license', name: 'Shop Licencing',                     description: 'Regulatory assistance for municipal and trade permits.' },
+        { id: 'praz_tender',  name: 'PRAZ Tender Registration',           description: 'Comprehensive vendor registration for national tenders.' },
+        { id: 'zimra_returns',name: 'ZIMRA Tax Returns',                  description: 'Accurate preparation of corporate and individual filings.' },
+        { id: 'bookkeeping',  name: 'Professional Bookkeeping',           description: 'High-integrity financial record-keeping and reporting.' },
+        { id: 'printing',     name: 'Printing & Design',                  description: 'High-quality corporate branding materials and business cards.' },
+        { id: 'web_design',   name: 'Website Design & Hosting',           description: 'Fast, responsive, and SEO-optimized digital solutions.' },
+        { id: 'social_media', name: 'Social Media Marketing Campaigns',             description: 'Targeted strategies to drive real business growth.' }
     ];
 
     // --- Populate Services Grid (Editorial / Asymmetric style) ---
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const createServiceCard = (service, index) => {
         const mtClass = index % 2 !== 0 ? 'lg:mt-12' : '';
         const div = document.createElement('div');
-        div.className = `bg-white shadow-md border border-gray-100 border-l-2 hover:shadow-lg p-10 rounded-none transition-all duration-300 group cursor-pointer ${mtClass} reveal`;
+        div.className = `bg-transparent border border-gold-DEFAULT/10 border-l-2 p-10 rounded-none transition-all duration-300 group cursor-pointer ${mtClass} reveal`;
         div.style.cssText = 'border-left-color: transparent;';
         div.addEventListener('mouseenter', () => {
             div.style.borderLeftColor = '#D4AF37';
@@ -121,11 +121,11 @@ document.addEventListener('DOMContentLoaded', () => {
             cursor.classList.remove('hover');
         });
         div.innerHTML = `
-            <div class="text-gold-DEFAULT/30 text-5xl font-heading mb-4 group-hover:text-gold-DEFAULT/60 transition-colors">0${index + 1}</div>
-            <h3 class="text-2xl font-heading font-bold mb-4 text-navy-900 group-hover:text-navy-DEFAULT transition-colors">${service.name}</h3>
-            <p class="text-slate-500 mb-8 font-light leading-relaxed">${service.description}</p>
-            <div class="flex justify-between items-center border-t border-gray-100 pt-6 text-gold-DEFAULT">
-                <span class="text-sm font-bold uppercase tracking-wider group-hover:text-navy-900 transition-colors">Request Info</span>
+            <div class="text-gold-DEFAULT/30 text-5xl font-heading mb-4 group-hover:text-gold-DEFAULT transition-colors">0${index + 1}</div>
+            <h3 class="text-2xl font-heading font-bold mb-4 text-white group-hover:text-gold-DEFAULT transition-colors">${service.name}</h3>
+            <p class="text-slate-300 mb-8 font-light leading-relaxed">${service.description}</p>
+            <div class="flex justify-between items-center border-t border-gold-DEFAULT/10 pt-6 text-gold-DEFAULT">
+                <span class="text-sm font-bold uppercase tracking-wider group-hover:text-white transition-colors">Request Info</span>
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform group-hover:translate-x-2 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>

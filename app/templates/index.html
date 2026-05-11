@@ -22,9 +22,9 @@
                 extend: {
                     colors: {
                         navy: {
-                            900: '#060B19',
-                            DEFAULT: '#0A1128',
-                            800: '#0F1A3A',
+                            900: '#040814',
+                            DEFAULT: '#040814',
+                            800: '#040814',
                         },
                         gold: {
                             DEFAULT: '#D4AF37',
@@ -32,8 +32,8 @@
                             light: '#F8E5A1',
                         },
                         emerald: {
-                            DEFAULT: '#50C878',
-                            dark: '#3E9E5E',
+                            DEFAULT: '#1B4332',
+                            dark: '#081c15',
                         }
                     },
                     fontFamily: {
@@ -54,7 +54,7 @@
     <!-- Lenis Smooth Scroll -->
     <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
 </head>
-<body style="background-color: #F8FAFC;" class="text-slate-600 font-sans antialiased">
+<body style="background-color: #040814;" class="text-slate-300 font-sans antialiased">
 
     <!-- Page Frame -->
     <div class="page-frame"></div>
@@ -72,9 +72,9 @@
     </div>
 
     <!-- Navigation -->
-    <nav class="fixed w-full bg-white/95 backdrop-blur-md z-50 border-b border-gray-100 py-4 px-6 md:px-12 flex justify-between items-center shadow-sm">
+    <nav class="fixed w-full bg-[#040814]/95 backdrop-blur-md z-50 border-b border-gold-DEFAULT/10 py-4 px-6 md:px-12 flex justify-between items-center shadow-none">
         <div></div>
-        <div class="hidden md:flex gap-8 text-sm font-medium text-slate-600">
+        <div class="hidden md:flex gap-8 text-sm font-medium text-slate-300">
             <a href="#hero" class="nav-link hover:text-gold-DEFAULT transition-colors duration-200 active text-gold-DEFAULT cursor-pointer">Home</a>
             <a href="#services" class="nav-link hover:text-gold-DEFAULT transition-colors duration-200 cursor-pointer">Services</a>
             <a href="#credentials" class="nav-link hover:text-gold-DEFAULT transition-colors duration-200 cursor-pointer">Credentials</a>
@@ -84,23 +84,23 @@
 
     <!-- Hero Section -->
     <section id="hero" class="pt-32 pb-20 md:pt-48 md:pb-32 px-6 md:px-12 flex flex-col items-center text-center reveal">
-        <div class="mb-6 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-DEFAULT/10 border border-gold-DEFAULT/30 text-gold-DEFAULT text-xs font-bold uppercase tracking-wider">
+        <div class="mb-6 inline-flex items-center gap-2 px-3 py-1 rounded-full border border-gold-DEFAULT/30 text-gold-DEFAULT text-xs font-bold uppercase tracking-wider">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
             </svg>
             Certified Corporate Consultants
         </div>
-        <h1 class="text-4xl md:text-6xl font-heading font-extrabold max-w-4xl leading-tight mb-6 text-navy-900">
+        <h1 class="text-4xl md:text-6xl font-heading font-extrabold max-w-4xl leading-tight mb-6 text-white">
             Secure Your Business Future in Zimbabwe with <span class="text-gold-DEFAULT">Authority</span>
         </h1>
-        <p class="text-lg md:text-xl text-slate-500 max-w-2xl mb-10 leading-relaxed font-light">
+        <p class="text-lg md:text-xl text-slate-300 max-w-2xl mb-10 leading-relaxed font-light">
             We simplify company registration, ZIMRA tax clearances, and PRAZ tender compliance so you can operate with absolute legal confidence.
         </p>
         <div class="flex gap-4 flex-col sm:flex-row mb-20">
-            <a href="#services" style="background-color: #D4AF37; color: #060B19;" class="px-8 py-3 rounded-md font-bold hover:opacity-90 transition-opacity duration-200 shadow-lg cursor-pointer">
+            <a href="#services" style="background-color: #D4AF37; color: #040814;" class="px-8 py-3 rounded-md font-bold hover:opacity-90 transition-opacity duration-200 cursor-pointer">
                 Explore Services
             </a>
-            <a href="#checkout" style="border: 1px solid #D4AF37; color: #D4AF37;" class="px-8 py-3 rounded-md font-bold hover:bg-white/10 transition-colors duration-200 cursor-pointer">
+            <a href="#checkout" style="border: 1px solid #D4AF37; color: #D4AF37;" class="px-8 py-3 rounded-md font-bold hover:bg-white/5 transition-colors duration-200 cursor-pointer">
                 Start Process Securely
             </a>
         </div>
@@ -128,11 +128,11 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-24 px-6 md:px-12 bg-slate-50 border-y border-gray-100 reveal">
+    <section id="services" class="py-24 px-6 md:px-12 bg-transparent border-y border-gold-DEFAULT/10 reveal">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-navy-900">Our Official <span class="text-gold-DEFAULT">Services</span></h2>
-                <p class="text-slate-500 font-light">Streamlining corporate compliance and financial administration.</p>
+                <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-white">Our Official <span class="text-gold-DEFAULT">Services</span></h2>
+                <p class="text-slate-300 font-light">Streamlining corporate compliance and financial administration.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="services-grid">
                 <!-- Services injected via JS -->
@@ -141,54 +141,54 @@
     </section>
 
     <!-- Credentials & Metrics Section (Replaces "Why Us") -->
-    <section id="credentials" class="py-24 px-6 md:px-12 reveal bg-white">
+    <section id="credentials" class="py-24 px-6 md:px-12 reveal bg-transparent">
         <div class="max-w-5xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-navy-900">Proven <span class="text-gold-DEFAULT">Expertise</span> & Authority</h2>
-                <p class="text-slate-500 font-light max-w-2xl mx-auto">We don't just fill forms; we provide guaranteed compliance strategies recognized by major Zimbabwean authorities.</p>
+                <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-white">Proven <span class="text-gold-DEFAULT">Expertise</span> & Authority</h2>
+                <p class="text-slate-300 font-light max-w-2xl mx-auto">We don't just fill forms; we provide guaranteed compliance strategies recognized by major Zimbabwean authorities.</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mt-12">
-                <div class="p-8 bg-slate-50 border border-gray-100 rounded-xl hover:border-gold-DEFAULT/40 transition-colors duration-300">
+                <div class="p-8 bg-transparent border border-gold-DEFAULT/10 rounded-xl hover:border-gold-DEFAULT/40 transition-colors duration-300">
                     <div class="flex justify-center mb-6">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14 text-gold-DEFAULT metric-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
                         </svg>
                     </div>
-                    <div class="text-4xl font-heading font-bold text-navy-900 mb-2 stat-reveal">24h</div>
-                    <h4 class="text-lg font-bold text-slate-700 mb-2">Turnaround Time</h4>
-                    <p class="text-sm text-slate-400">Expedited processing for ZIMRA ITF263 and PRAZ vendor registrations.</p>
+                    <div class="text-4xl font-heading font-bold text-white mb-2 stat-reveal">24h</div>
+                    <h4 class="text-lg font-bold text-white mb-2">Turnaround Time</h4>
+                    <p class="text-sm text-slate-300">Expedited processing for ZIMRA ITF263 and PRAZ vendor registrations.</p>
                 </div>
-                <div class="p-8 bg-slate-50 border border-gray-100 rounded-xl hover:border-gold-DEFAULT/40 transition-colors duration-300">
+                <div class="p-8 bg-transparent border border-gold-DEFAULT/10 rounded-xl hover:border-gold-DEFAULT/40 transition-colors duration-300">
                     <div class="flex justify-center mb-6">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14 text-gold-DEFAULT" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                     </div>
-                    <div class="text-4xl font-heading font-bold text-navy-900 mb-2 stat-reveal">100%</div>
-                    <h4 class="text-lg font-bold text-slate-700 mb-2">Compliance Rate</h4>
-                    <p class="text-sm text-slate-400">Zero rejections. Deep expertise in Zimbabwean corporate law and taxation.</p>
+                    <div class="text-4xl font-heading font-bold text-white mb-2 stat-reveal">100%</div>
+                    <h4 class="text-lg font-bold text-white mb-2">Compliance Rate</h4>
+                    <p class="text-sm text-slate-300">Zero rejections. Deep expertise in Zimbabwean corporate law and taxation.</p>
                 </div>
-                <div class="p-8 bg-slate-50 border border-gray-100 rounded-xl hover:border-gold-DEFAULT/40 transition-colors duration-300">
+                <div class="p-8 bg-transparent border border-gold-DEFAULT/10 rounded-xl hover:border-gold-DEFAULT/40 transition-colors duration-300">
                     <div class="flex justify-center mb-6">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14 text-gold-DEFAULT" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                         </svg>
                     </div>
-                    <div class="text-4xl font-heading font-bold text-navy-900 mb-2 stat-reveal">Encrypted</div>
-                    <h4 class="text-lg font-bold text-slate-700 mb-2">Secure Handling</h4>
-                    <p class="text-sm text-slate-400">Your corporate IP and personal documents are processed with bank-level privacy.</p>
+                    <div class="text-4xl font-heading font-bold text-white mb-2 stat-reveal">Encrypted</div>
+                    <h4 class="text-lg font-bold text-white mb-2">Secure Handling</h4>
+                    <p class="text-sm text-slate-300">Your corporate IP and personal documents are processed with bank-level privacy.</p>
                 </div>
             </div>
         </div>
     </section>
     
     <!-- Testimonials Section (Smooth Slidings) -->
-    <section id="testimonials" class="py-24 px-6 md:px-12 bg-slate-50 border-y border-gray-100 reveal overflow-hidden">
+    <section id="testimonials" class="py-24 px-6 md:px-12 bg-transparent border-y border-gold-DEFAULT/10 reveal overflow-hidden">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-navy-900">Client <span class="text-gold-DEFAULT">Success</span> Stories</h2>
-                <p class="text-slate-500 font-light">Join 500+ businesses operating with absolute legal confidence.</p>
+                <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-white">Client <span class="text-gold-DEFAULT">Success</span> Stories</h2>
+                <p class="text-slate-300 font-light">Join 500+ businesses operating with absolute legal confidence.</p>
             </div>
             
             <!-- Swiper -->
@@ -196,12 +196,12 @@
                 <div class="swiper-wrapper">
                     <!-- Slide 1 -->
                     <div class="swiper-slide">
-                        <div class="p-10 bg-white border border-gray-100 rounded-2xl shadow-sm h-full flex flex-col justify-between">
-                            <p class="text-lg italic text-slate-500 mb-8 font-light">"No Vanity handled our company registration and ZIMRA setup in record time. Their authority in the Zimbabwean market is unmatched."</p>
+                        <div class="p-10 bg-transparent border border-gold-DEFAULT/10 rounded-2xl h-full flex flex-col justify-between">
+                            <p class="text-lg italic text-slate-300 mb-8 font-light">"No Vanity handled our company registration and ZIMRA setup in record time. Their authority in the Zimbabwean market is unmatched."</p>
                             <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 rounded-full bg-gold-DEFAULT flex items-center justify-center font-bold text-navy-900">TN</div>
+                                <div class="w-12 h-12 rounded-full bg-gold-DEFAULT flex items-center justify-center font-bold text-[#040814]">TN</div>
                                 <div class="text-left">
-                                    <h4 class="text-navy-900 font-bold">Tadiwa Nyoni</h4>
+                                    <h4 class="text-white font-bold">Tadiwa Nyoni</h4>
                                     <p class="text-xs text-gold-DEFAULT uppercase tracking-widest">CEO, TechZim Solutions</p>
                                 </div>
                             </div>
@@ -209,12 +209,12 @@
                     </div>
                     <!-- Slide 2 -->
                     <div class="swiper-slide">
-                        <div class="p-10 bg-white border border-gray-100 rounded-2xl shadow-sm h-full flex flex-col justify-between">
-                            <p class="text-lg italic text-slate-500 mb-8 font-light">"Absolute professionals. The ITF263 clearance process was seamless. They are now our permanent corporate consultants."</p>
+                        <div class="p-10 bg-transparent border border-gold-DEFAULT/10 rounded-2xl h-full flex flex-col justify-between">
+                            <p class="text-lg italic text-slate-300 mb-8 font-light">"Absolute professionals. The ITF263 clearance process was seamless. They are now our permanent corporate consultants."</p>
                             <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 rounded-full bg-emerald-DEFAULT flex items-center justify-center font-bold text-navy-900">SM</div>
+                                <div class="w-12 h-12 rounded-full bg-emerald-DEFAULT flex items-center justify-center font-bold text-white">SM</div>
                                 <div class="text-left">
-                                    <h4 class="text-navy-900 font-bold">Sarah Moyo</h4>
+                                    <h4 class="text-white font-bold">Sarah Moyo</h4>
                                     <p class="text-xs text-gold-DEFAULT uppercase tracking-widest">Director, Moyo Logistics</p>
                                 </div>
                             </div>
@@ -222,12 +222,12 @@
                     </div>
                     <!-- Slide 3 -->
                     <div class="swiper-slide">
-                        <div class="p-10 bg-white border border-gray-100 rounded-2xl shadow-sm h-full flex flex-col justify-between">
-                            <p class="text-lg italic text-slate-500 mb-8 font-light">"Navigating PRAZ tenders was a nightmare until we found No Vanity. Their guidance secured us a major government contract."</p>
+                        <div class="p-10 bg-transparent border border-gold-DEFAULT/10 rounded-2xl h-full flex flex-col justify-between">
+                            <p class="text-lg italic text-slate-300 mb-8 font-light">"Navigating PRAZ tenders was a nightmare until we found No Vanity. Their guidance secured us a major government contract."</p>
                             <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 rounded-full bg-gold-DEFAULT flex items-center justify-center font-bold text-navy-900">KM</div>
+                                <div class="w-12 h-12 rounded-full bg-gold-DEFAULT flex items-center justify-center font-bold text-[#040814]">KM</div>
                                 <div class="text-left">
-                                    <h4 class="text-navy-900 font-bold">Kelvin Mutasa</h4>
+                                    <h4 class="text-white font-bold">Kelvin Mutasa</h4>
                                     <p class="text-xs text-gold-DEFAULT uppercase tracking-widest">Founder, KM Construction</p>
                                 </div>
                             </div>
@@ -241,42 +241,42 @@
     </section>
 
     <!-- Checkout / Contact Section -->
-    <section id="checkout" class="py-24 px-6 md:px-12 bg-white border-t border-gray-100 reveal">
-        <div class="max-w-3xl mx-auto bg-slate-50 p-8 md:p-14 rounded-2xl shadow-lg border border-gray-100">
+    <section id="checkout" class="py-24 px-6 md:px-12 bg-transparent border-t border-gold-DEFAULT/10 reveal">
+        <div class="max-w-3xl mx-auto bg-transparent p-8 md:p-14 rounded-2xl border border-gold-DEFAULT/20">
             <div class="flex justify-center mb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-emerald-DEFAULT" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                 </svg>
             </div>
-            <h2 class="text-3xl font-heading font-bold mb-2 text-center text-navy-900">Secure Application <span class="text-gold-DEFAULT">Portal</span></h2>
-            <p class="text-center text-slate-500 mb-10 font-light">Initiate your engagement with our official processing team.</p>
+            <h2 class="text-3xl font-heading font-bold mb-2 text-center text-white">Secure Application <span class="text-gold-DEFAULT">Portal</span></h2>
+            <p class="text-center text-slate-300 mb-10 font-light">Initiate your engagement with our official processing team.</p>
             
             <form id="checkout-form" class="space-y-6">
                 <div>
-                    <label class="block text-sm font-bold text-slate-600 mb-2">Select Service</label>
-                    <select id="service-select" class="w-full bg-white border border-gray-200 text-navy-900 rounded-md p-4 focus:outline-none focus:ring-2 focus:ring-gold-DEFAULT/50 focus:border-gold-DEFAULT transition-all duration-200 cursor-pointer">
+                    <label class="block text-sm font-bold text-slate-300 mb-2">Select Service</label>
+                    <select id="service-select" class="w-full bg-[#040814] border border-gold-DEFAULT/30 text-white rounded-md p-4 focus:outline-none focus:ring-2 focus:ring-gold-DEFAULT/50 focus:border-gold-DEFAULT transition-all duration-200 cursor-pointer">
                         <!-- Options injected via JS -->
                     </select>
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                        <label class="block text-sm font-bold text-slate-600 mb-2">Full Legal Name</label>
-                        <input type="text" id="full-name" required class="w-full bg-white border border-gray-200 text-navy-900 rounded-md p-4 focus:outline-none focus:ring-2 focus:ring-gold-DEFAULT/50 focus:border-gold-DEFAULT transition-all duration-200" placeholder="John Doe">
+                        <label class="block text-sm font-bold text-slate-300 mb-2">Full Legal Name</label>
+                        <input type="text" id="full-name" required class="w-full bg-transparent border border-gold-DEFAULT/30 text-white rounded-md p-4 focus:outline-none focus:ring-2 focus:ring-gold-DEFAULT/50 focus:border-gold-DEFAULT transition-all duration-200 placeholder-slate-500" placeholder="John Doe">
                     </div>
                     <div>
-                        <label class="block text-sm font-bold text-slate-600 mb-2">Phone Number</label>
-                        <input type="tel" id="phone" required class="w-full bg-white border border-gray-200 text-navy-900 rounded-md p-4 focus:outline-none focus:ring-2 focus:ring-gold-DEFAULT/50 focus:border-gold-DEFAULT transition-all duration-200" placeholder="+263 77...">
+                        <label class="block text-sm font-bold text-slate-300 mb-2">Phone Number</label>
+                        <input type="tel" id="phone" required class="w-full bg-transparent border border-gold-DEFAULT/30 text-white rounded-md p-4 focus:outline-none focus:ring-2 focus:ring-gold-DEFAULT/50 focus:border-gold-DEFAULT transition-all duration-200 placeholder-slate-500" placeholder="+263 77...">
                     </div>
                 </div>
                 
                 <div>
-                    <label class="block text-sm font-bold text-slate-600 mb-2">Email Address</label>
-                    <input type="email" id="email" required class="w-full bg-white border border-gray-200 text-navy-900 rounded-md p-4 focus:outline-none focus:ring-2 focus:ring-gold-DEFAULT/50 focus:border-gold-DEFAULT transition-all duration-200" placeholder="john@example.com">
+                    <label class="block text-sm font-bold text-slate-300 mb-2">Email Address</label>
+                    <input type="email" id="email" required class="w-full bg-transparent border border-gold-DEFAULT/30 text-white rounded-md p-4 focus:outline-none focus:ring-2 focus:ring-gold-DEFAULT/50 focus:border-gold-DEFAULT transition-all duration-200 placeholder-slate-500" placeholder="john@example.com">
                 </div>
                 
                 <div class="pt-4">
-                    <button type="submit" id="submit-btn" class="w-full bg-gold-DEFAULT text-navy-900 font-bold py-4 rounded-md hover:bg-gold-hover transition-colors duration-200 shadow-lg flex items-center justify-center gap-2 cursor-pointer">
+                    <button type="submit" id="submit-btn" class="w-full bg-gold-DEFAULT text-[#040814] font-bold py-4 rounded-md hover:bg-gold-hover transition-colors duration-200 flex items-center justify-center gap-2 cursor-pointer">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
                         </svg>
@@ -290,7 +290,7 @@
     </section>
 
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/263770000000?text=Hi%20No%20Vanity%20team%2C%20I%20need%20help%20with%20my%20business%20registration%2Ftaxes." target="_blank" rel="noopener noreferrer" class="fixed bottom-8 right-8 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform duration-300 z-50 flex items-center justify-center cursor-pointer group" aria-label="Chat on WhatsApp">
+    <a href="https://wa.me/263770000000?text=Hi%20No%20Vanity%20team%2C%20I%20need%20help%20with%20my%20business%20registration%2Ftaxes." target="_blank" rel="noopener noreferrer" class="fixed bottom-8 right-8 bg-emerald-DEFAULT text-white p-4 rounded-full hover:scale-110 transition-transform duration-300 z-50 flex items-center justify-center cursor-pointer group" aria-label="Chat on WhatsApp">
         <!-- SVG icon kept from before -->
         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 16 16" class="group-hover:animate-pulse">
             <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
@@ -298,9 +298,9 @@
     </a>
     
     <!-- Footer -->
-    <footer class="py-12 bg-slate-100 border-t border-gray-200 text-center text-sm text-slate-400">
+    <footer class="py-12 bg-[#040814] border-t border-gold-DEFAULT/10 text-center text-sm text-slate-400">
         <div class="mb-4 flex justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-navy-900/30" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white/30" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
             </svg>
         </div>

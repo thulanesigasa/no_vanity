@@ -31,7 +31,7 @@ a, button, select, input, .cursor-pointer {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: #ffffff;
+    background-color: #040814;
     z-index: 9999;
     display: flex;
     justify-content: center;
@@ -46,20 +46,20 @@ a, button, select, input, .cursor-pointer {
 .preloader-text {
     font-family: 'EB Garamond', serif;
     font-size: 2rem;
-    color: #D4AF37; /* Gold on white — retained */
+    color: #D4AF37;
     opacity: 0;
-    animation: pulseText 2s ease-in-out infinite alternate;
+    animation: fadeInSmooth 1s ease-in forwards;
+    animation-delay: 0.4s;
 }
 
 .preloader-logo {
     opacity: 0;
-    animation: pulseText 2s ease-in-out infinite alternate;
-    animation-delay: 0.2s;
+    animation: fadeInSmooth 1s ease-in forwards;
 }
 
-@keyframes pulseText {
-    0% { opacity: 0.3; transform: scale(0.98); }
-    100% { opacity: 1; transform: scale(1.02); }
+@keyframes fadeInSmooth {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
 
 /* --- Custom Cursor --- */
@@ -201,11 +201,7 @@ input:-webkit-autofill:active {
 
 /* Mesh Gradient */
 .mesh-gradient {
-    background:
-        radial-gradient(at 15% 20%, rgba(212, 175, 55, 0.12) 0px, transparent 55%),
-        radial-gradient(at 85% 80%, rgba(80, 200, 120, 0.08) 0px, transparent 55%),
-        radial-gradient(at 50% 50%, rgba(248, 250, 252, 1) 0px, transparent 100%);
-    position: relative;
+    background: transparent;
 }
 
 /* Scramble effect hint */
